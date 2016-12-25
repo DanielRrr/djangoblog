@@ -4,13 +4,15 @@
   </head>
   <body>
     <div>
-      <h1><a href=""></a><h1>
+      <h1><a href="">De Profundis</a><h1>
     </div>
 
+    {% for post in posts%}
     <div>
-      <p>Published at 24.12.2016, 18.46</p>
-      <h2><a href="">The first quote</a><h2>
-      <p>. . . Suffering is one very long moment.  We cannot divide it by seasons.  We can only record its moods, and chronicle their return.  With us time itself does not progress.  It revolves.  It seems to circle round one centre of pain.  The paralysing immobility of a life every circumstance of which is regulated after an unchangeable pattern, so that we eat and drink and lie down and pray, or kneel at least for prayer, according to the inflexible laws of an iron formula: this immobile quality, that makes each dreadful day in the very minutest detail like its brother, seems to communicate itself to those external forces the very essence of whose existence is ceaseless change.  Of seed-time or harvest, of the reapers bending over the corn, or the grape gatherers threading through the vines, of the grass in the orchard made white with broken blossoms or strewn with fallen fruit: of these we know nothing and can know nothing.</p>
+      <p>published: {{ post.published_date }}</p>
+      <h1><a href="">{{ post.title }}</a></h1>
+      <p>{{ post.text|linebreaksbr}}</p>
     </div>
+    {% endfor%}
   </body>
 </html>
